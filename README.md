@@ -9,7 +9,7 @@
 Trending picks from your own apps, the weather at a glance, and a look that follows the sunset.<br>
 Open source. Built with Claude Code. One button to undo.
 
-[**consultai.me/custom-webos**](https://fernandodimas.github.io/custom-webos) · [Install](#install) · [LG TVs](#lg-tvs-webos) · [Samsung TVs](#samsung-tvs-tizen) · [Any TV](#any-tv) · [Make it yours](#make-it-yours)
+[**fernandodimas.github.io/custom-webos**](https://fernandodimas.github.io/custom-webos) · [Install](#install) · [LG TVs](#lg-tvs-webos) · [Samsung TVs](#samsung-tvs-tizen) · [Any TV](#any-tv) · [Make it yours](#make-it-yours)
 
 <img src=".github/preview.webp" width="880" alt="The Custom webOS Home home screen: a glass shelf of apps, trending picks, and a drawer with the weather and crypto prices">
 
@@ -207,7 +207,7 @@ It's your code, and Claude Code finds its way around it. Try:
 | [`webos/build.py`](webos/build.py), [`webos/install.py`](webos/install.py) | The LG app package and its install |
 | [`tizen/build.py`](tizen/build.py) | The Samsung app package |
 
-The website ([consultai.me/custom-webos](https://fernandodimas.github.io/custom-webos)) is in [`docs/`](docs): plain HTML, CSS and JS on GitHub Pages.
+The website ([fernandodimas.github.io/custom-webos](https://fernandodimas.github.io/custom-webos)) is in [`docs/`](docs): plain HTML, CSS and JS on GitHub Pages.
 
 ## Privacy
 
