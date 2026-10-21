@@ -1,15 +1,15 @@
 {
-  "id": "io.freemytv",
+  "id": "com.fdimas.customwebos",
   "version": "1.0.0",
-  "vendor": "Free My TV",
+  "vendor": "Custom webOS Home",
   "type": "web",
   "main": "index.html",
-  "title": "Free My TV",
+  "title": "Custom webOS Home",
   "icon": "icon.png",
   "largeIcon": "largeIcon.png",
   "iconColor": "#FF7A9E",
   "resolution": "1920x1080",
   "handlesRelaunch": true,
   "disableBackHistoryAPI": true,
-  "requiredPermissions": ["applications", "applications.launcher"]
+  "requiredPermissions": ["applications", "applications.launcher", "applications.query"]
 }

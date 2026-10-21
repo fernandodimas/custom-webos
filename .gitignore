@@ -12,3 +12,12 @@ __pycache__/
 
 # macOS
 .DS_Store
+
+# The TV's app list, collected for this TV (webos/sync_apps.py)
+webos/apps.json
+
+# The TV's raw app icons, downloaded for tools/prepare_icons.py
+webos/icons_raw/
+
+# The icons the build ships (tools/prepare_icons.py)
+web/icons/

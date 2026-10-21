@@ -63,7 +63,7 @@
   /** Shelf apps in this order when installed, like the Android app: key, LG app id, name on the TV, brand gradient. */
   var SHELF = [
     ['netflix', /^netflix$/, /netflix/i, ['#0A0A0A', '#000000']],
-    ['youtube', /youtube/, /^youtube$/i, ['#1C1C1E', '#09090A']],
+    ['youtube', /youtube/, /^youtube$/i, ['#FFFFFF', '#F0F0F3']],
     ['prime', /^amazon$/, /prime video|amazon/i, ['#2AA8FF', '#0A68D4']],
     ['disney', /disney/, /disney/i, ['#173584', '#08143F']],
     ['max', /hbo|wbd/, /^(hbo )?max$|hbo max/i, ['#5C30E8', '#221684']],
@@ -102,11 +102,22 @@
     box.style.background = 'linear-gradient(' + top + ', ' + bottom + ')';
     var word = el('div', 'word', box, app.title);
     if (wordSize) word.style.fontSize = wordSize + 'px';
-    if (app.icon) {
+    if (app.localIcon || app.icon) {
       var img = el('img', '', box);
       word.style.visibility = 'hidden';
-      img.onerror = function () { img.parentNode.removeChild(img); word.style.visibility = ''; };
-      img.src = app.icon;
+      var tried = 0;
+      img.onerror = function () {
+        // the icon the build carries comes first: the TV's own artwork has the logo on a solid
+        // field, which reads as a box inside the tile; the TV's is the fallback.
+        if (!tried && app.icon && app.icon !== app.localIcon) {
+          tried = 1;
+          img.src = app.icon;
+          return;
+        }
+        img.parentNode.removeChild(img);
+        word.style.visibility = '';
+      };
+      img.src = app.localIcon || app.icon;
     }
   }
 
@@ -889,5 +900,5 @@
   }, 30000);
 
   // For the browser preview and tests.
-  window.FreeMyTV = {state: st, move: move, activate: activate, back: back, showSaver: showSaver, hideSaver: hideSaver, toast: toast};
+  window.CustomWebOS = {state: st, move: move, activate: activate, back: back, showSaver: showSaver, hideSaver: hideSaver, toast: toast};
 })();
