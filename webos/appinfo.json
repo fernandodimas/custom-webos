@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "vendor": "Custom webOS Home",
   "type": "web",
+  "appCategory": [
+    "home"
+  ],
   "main": "index.html",
   "title": "Custom webOS Home",
   "icon": "icon.png",
@@ -11,5 +14,9 @@
   "resolution": "1920x1080",
   "handlesRelaunch": true,
   "disableBackHistoryAPI": true,
-  "requiredPermissions": ["applications", "applications.launcher", "applications.query"]
+  "requiredPermissions": [
+    "applications",
+    "applications.launcher",
+    "applications.query"
+  ]
 }
