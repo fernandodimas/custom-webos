@@ -1,24 +1,11 @@
 #!/usr/bin/env bash
-# Builds CustomWebOS.apk without Gradle: aapt2 -> javac -> d8 -> zipalign -> apksigner.
-# Needs a JDK (17+) and the Android SDK command-line tools (build-tools 34+, platform android-34). See README.md.
+# Build script for Custom webOS Home on LG webOS TV.
+# See PUBLISHING-LG.md for publishing instructions.
+# webOS builds use python3 webos/build.py; this script is a placeholder.
 set -euo pipefail
-cd "$(dirname "$0")"
+cd "tv oled"
 
-# --- Tools
-SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-}}"
-if [ -z "$SDK" ]; then
-  for d in "$HOME/Library/Android/sdk" "$HOME/Android/Sdk" /opt/homebrew/share/android-commandlinetools \
-           /usr/local/share/android-commandlinetools /usr/lib/android-sdk; do
-    if [ -d "$d/build-tools" ]; then SDK="$d"; break; fi
-  done
-fi
-[ -n "$SDK" ] && [ -d "$SDK/build-tools" ] || { echo "Android SDK not found. Install it and set ANDROID_HOME (see README)."; exit 1; }
-BT="$SDK/build-tools/$(ls "$SDK/build-tools" | sort -V | tail -1)"
-AJ="$(ls -d "$SDK"/platforms/android-*/android.jar 2>/dev/null | sort -V | tail -1 || true)"
-[ -f "${AJ:-}" ] || { echo "Android platform not found. Run: sdkmanager \"platforms;android-34\""; exit 1; }
-JAVAC="${JAVA_HOME:+$JAVA_HOME/bin/}javac"
-KEYTOOL="${JAVA_HOME:+$JAVA_HOME/bin/}keytool"
-command -v "$JAVAC" >/dev/null 2>&1 || { echo "JDK not found. Install JDK 17 and set JAVA_HOME."; exit 1; }
+echo "Custom webOS build: see PUBLISHING-LG.md and run python3 webos/build.py"
 
 # --- Settings: config.properties -> Config.java
 if [ ! -f config.properties ]; then
