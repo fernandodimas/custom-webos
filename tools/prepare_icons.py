@@ -53,9 +53,10 @@ STRIP_BG = {
     'com.twin.app.gamingportal': 'white',
     'com.webos.app.browser': 'field',
     'com.webos.app.camera': 'field',
-    'com.webos.app.hdmi2': 'field',
+    'com.webos.app.hdmi1': 'glyph',
+    'com.webos.app.hdmi2': 'glyph',
     'com.webos.app.hdmi3': 'field',
-    'com.webos.app.hdmi4': 'field',
+    'com.webos.app.hdmi4': 'glyph',
     'com.webos.app.lgchannels': 'field',
     'com.webos.app.livetv': 'field',
     'globoplaywebos': 'field',
@@ -103,10 +104,27 @@ def strip_field(im, mode):
         mode = mode[0]
     im = im.convert('RGBA')
     w, h = im.size
-    px = im.load()
+    if mode == 'glyph':
+        r, g, b, a = im.split()
+        white_im = Image.merge('RGBA', (Image.new('L', im.size, 255), Image.new('L', im.size, 255), Image.new('L', im.size, 255), a))
+        box = white_im.getbbox()
+        if box:
+            x0, y0, x1, y1 = box
+            box = (max(0, x0 - PAD), max(0, y0 - PAD), min(w, x1 + PAD), min(h, y1 + PAD))
+            return white_im.crop(box)
+        return white_im
 
     field = field_color(im)
     if field is None:
+        # If the image is already on a transparent background with non-white glyph:
+        r, g, b, a = im.split()
+        if recolor or max(a.getdata()) > 0:
+            white_im = Image.merge('RGBA', (Image.new('L', im.size, 255), Image.new('L', im.size, 255), Image.new('L', im.size, 255), a))
+            box = white_im.getbbox()
+            if box:
+                x0, y0, x1, y1 = box
+                box = (max(0, x0 - PAD), max(0, y0 - PAD), min(w, x1 + PAD), min(h, y1 + PAD))
+                return white_im.crop(box)
         return im
     # channel where the field sits farthest from white — the one the white logo reads on
     ch = min(range(3), key=lambda i: field[i])
