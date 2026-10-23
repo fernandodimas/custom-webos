@@ -11,8 +11,8 @@
       if (lang === "en") location.replace("../" + location.search + location.hash);
     })();
   </script>
-  <title>Custom webOS Home — uma tela inicial rápida e sem anúncios para Google TV e TVs LG e Samsung</title>
-  <meta name="description" content="Tela inicial de código aberto para Google TV, Android TV e TVs LG e Samsung. Sem anúncios, a 60 fps, com o que está em alta nos seus próprios apps e um visual que acompanha o pôr do sol. Um botão para desfazer.">
+  <title>Custom webOS Home — uma tela inicial rápida e sem anúncios para TVs LG webOS</title>
+  <meta name="description" content="Tela inicial de código aberto para TVs LG webOS. Sem anúncios, a 60 fps, com o que está em alta nos seus próprios apps e um visual que acompanha o pôr do sol.">
   <link rel="canonical" href="https://fernandodimas.github.io/custom-webos/pt/">
   <link rel="alternate" hreflang="en" href="https://fernandodimas.github.io/custom-webos/">
   <link rel="alternate" hreflang="pt-BR" href="https://fernandodimas.github.io/custom-webos/pt/">
@@ -23,13 +23,13 @@
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:url" content="https://fernandodimas.github.io/custom-webos/pt/">
   <meta property="og:title" content="Custom webOS Home">
-  <meta property="og:description" content="Uma tela inicial rápida e sem anúncios para Google TV e TVs LG e Samsung. Código aberto. Um botão para desfazer.">
+  <meta property="og:description" content="Uma tela inicial rápida e sem anúncios para TVs LG webOS. Código aberto.">
   <meta property="og:image" content="https://fernandodimas.github.io/custom-webos/assets/og-pt.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Custom webOS Home">
-  <meta name="twitter:description" content="Uma tela inicial rápida e sem anúncios para Google TV e TVs LG e Samsung. Código aberto. Um botão para desfazer.">
+  <meta name="twitter:description" content="Uma tela inicial rápida e sem anúncios para TVs LG webOS. Código aberto.">
   <meta name="twitter:image" content="https://fernandodimas.github.io/custom-webos/assets/og-pt.jpg">
   <link rel="icon" type="image/png" href="../assets/favicon-64.png">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -63,9 +63,9 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-copy">
-        <p class="kicker" data-reveal>Código aberto · Google TV, Android TV, LG e Samsung</p>
-        <h1 data-reveal>Liberte sua <span class="grad">TV.</span></h1>
-        <p class="lede" data-reveal>Troque a tela inicial cheia de anúncios por uma rápida e limpa. O que está em alta nos seus próprios apps, o clima num relance e um visual que acompanha o pôr do sol. Um botão para desfazer.</p>
+        <p class="kicker" data-reveal>Código aberto · LG webOS</p>
+        <h1 data-reveal>Liberte sua <span class="grad">TV LG.</span></h1>
+        <p class="lede" data-reveal>Troque a tela inicial cheia de anúncios por uma rápida e limpa. O que está em alta nos seus próprios apps, o clima num relance, entradas e atalhos, com um visual que acompanha o pôr do sol.</p>
         <div class="cta" data-reveal>
           <a class="btn btn-dark" href="https://github.com/fernandodimas/custom-webos" rel="noopener">Baixar no GitHub <span aria-hidden="true">→</span></a>
           <button class="btn btn-glass" type="button" data-film><span class="play" aria-hidden="true"></span>Assista ao filme de 45 segundos</button>
@@ -205,65 +205,33 @@
       </div>
       <div class="panel" data-reveal>
         <div class="tabs" role="tablist" aria-label="Forma de instalar">
-          <button role="tab" aria-selected="true" aria-controls="tab-claude" id="t-claude">Com o Claude Code</button>
-          <button role="tab" aria-selected="false" aria-controls="tab-manual" id="t-manual">Manual</button>
-          <button role="tab" aria-selected="false" aria-controls="tab-lg" id="t-lg">TVs LG</button>
-          <button role="tab" aria-selected="false" aria-controls="tab-samsung" id="t-samsung">TVs Samsung</button>
+          <button role="tab" aria-selected="true" aria-controls="tab-devmode" id="t-devmode">Developer Mode</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-claude" id="t-claude">Com o Claude Code</button>
         </div>
 
-        <div class="tabpanel" id="tab-claude" role="tabpanel" aria-labelledby="t-claude">
+        <div class="tabpanel" id="tab-devmode" role="tabpanel" aria-labelledby="t-devmode">
           <ol class="howto">
-            <li><b>Na TV:</b> Configurações → Sistema → Sobre → aperte 7 vezes no item <em>Build</em> (o último da lista). De volta em Sistema, abra <em>Opções do desenvolvedor</em> e ative a <em>Depuração USB</em>. Anote o endereço IP da TV (Configurações → Rede e Internet).</li>
-            <li><b>No computador:</b> baixe o código.
-              <div class="code"><code>git clone https://github.com/fernandodimas/custom-webos &amp;&amp; cd custom-webos</code><button class="copy-btn" type="button" aria-label="Copiar comando">Copiar</button></div>
-            </li>
-            <li><b>Abra o Claude Code nessa pasta e diga:</b>
-              <div class="code prompt"><code>Instale o Custom webOS Home na minha TV em 192.168.1.50. Eu moro em São Paulo.</code><button class="copy-btn" type="button" aria-label="Copiar pedido">Copiar</button></div>
-              Ele instala o que falta, compila o app e coloca na sua TV. Troque pelo IP da sua TV e pela sua cidade.
-            </li>
-            <li><b>De volta na TV:</b> abra <em>Custom webOS Home</em> → <em>Início</em> → <em>Custom webOS Home</em> e aceite o aviso de depuração (marque <em>Sempre permitir</em>).</li>
-          </ol>
-        </div>
-
-        <div class="tabpanel" id="tab-manual" role="tabpanel" aria-labelledby="t-manual" hidden>
-          <ol class="howto">
-            <li><b>Na TV:</b> ative as <em>Opções do desenvolvedor</em> e a <em>Depuração USB</em> (como na outra aba) e anote o IP dela.</li>
-            <li><b>Ferramentas:</b> um JDK (17+), as ferramentas de linha de comando do Android SDK e o adb. No Mac:
-              <div class="code"><code>brew install --cask temurin android-commandlinetools android-platform-tools &amp;&amp; sdkmanager "build-tools;34.0.0" "platforms;android-34"</code><button class="copy-btn" type="button" aria-label="Copiar comando">Copiar</button></div>
-            </li>
-            <li><b>Compilar:</b> a primeira execução cria o <em>config.properties</em>. Coloque sua cidade lá (e <em>currency=BRL</em> para as cotações em reais) e, para os destaques, uma <a href="https://www.themoviedb.org/settings/api" rel="noopener">chave grátis do TMDB</a>. Depois compile de novo.
+            <li><b>Na TV:</b> na LG Content Store, instale o <em>Developer Mode</em>. Entre com uma <a href="https://webostv.developer.lge.com" rel="noopener">conta gratuita de desenvolvedor LG</a>, ative o <em>Dev Mode Status</em> (a TV reinicia) e depois ligue o <em>Key Server</em>. Anote o IP e a senha (passphrase) exibidos.</li>
+            <li><b>No computador:</b> baixe o código e compile o pacote:
               <div class="code"><code>git clone https://github.com/fernandodimas/custom-webos &amp;&amp; cd custom-webos &amp;&amp; ./build.sh</code><button class="copy-btn" type="button" aria-label="Copiar comando">Copiar</button></div>
             </li>
-            <li><b>Instalar:</b>
-              <div class="code"><code>adb connect 192.168.1.50:5555 &amp;&amp; adb install -r CustomWebOS.apk</code><button class="copy-btn" type="button" aria-label="Copiar comando">Copiar</button></div>
-              Nas TVs TCL, libere também o funcionamento em segundo plano (a TCL bloqueia por padrão):
-              <div class="code"><code>adb shell &quot;appops set com.fdimas.customwebos AUTO_START allow || appops set com.fdimas.customwebos APP_AUTO_START allow&quot;</code><button class="copy-btn" type="button" aria-label="Copiar comando">Copiar</button></div>
-            </li>
-            <li><b>Na TV:</b> abra <em>Custom webOS Home</em> → <em>Início</em> → <em>Custom webOS Home</em>.</li>
-          </ol>
-        </div>
-
-        <div class="tabpanel" id="tab-lg" role="tabpanel" aria-labelledby="t-lg" hidden>
-          <ol class="howto">
-            <li><b>Na TV:</b> na LG Content Store, instale o <em>Developer Mode</em>. Entre com uma <a href="https://webostv.developer.lge.com" rel="noopener">conta grátis de desenvolvedor LG</a>, ative o <em>Dev Mode Status</em> (a TV reinicia) e depois o <em>Key Server</em>. Anote o IP e a senha (passphrase) que aparecem.</li>
-            <li><b>No computador:</b> baixe o código e compile o app da LG. Coloque sua cidade no <em>config.properties</em> (e <em>currency=BRL</em> para as cotações em reais), como na Google TV.
-              <div class="code"><code>git clone https://github.com/fernandodimas/custom-webos &amp;&amp; cd custom-webos &amp;&amp; python3 webos/build.py</code><button class="copy-btn" type="button" aria-label="Copiar comando">Copiar</button></div>
-            </li>
-            <li><b>Instalar:</b> digite a senha da TV quando ele pedir. O Custom webOS Home abre na TV.
+            <li><b>Instalar na TV:</b> execute o instalador e digite a senha da TV quando solicitado:
               <div class="code"><code>python3 webos/install.py 192.168.1.50</code><button class="copy-btn" type="button" aria-label="Copiar comando">Copiar</button></div>
             </li>
-            <li><b>A um botão:</b> com ele aberto, segure uma tecla numérica do controle. Daí em diante, essa tecla abre o Custom webOS Home de qualquer lugar. Aperte <em>EXTEND</em> no Developer Mode uma vez por mês para mantê-lo.</li>
+            <li><b>Acesso rápido:</b> com o Custom webOS Home aberto, segure uma tecla numérica (ex: 1) no controle Magic Remote. Daí em diante, essa tecla abre o Custom webOS Home de qualquer entrada ou app.</li>
           </ol>
         </div>
 
-        <div class="tabpanel" id="tab-samsung" role="tabpanel" aria-labelledby="t-samsung" hidden>
+        <div class="tabpanel" id="tab-claude" role="tabpanel" aria-labelledby="t-claude" hidden>
           <ol class="howto">
-            <li><b>Na TV:</b> abra <em>Apps</em> e digite <em>1&nbsp;2&nbsp;3&nbsp;4&nbsp;5</em> no controle. Ative o <em>Developer mode</em>, digite o IP do seu computador em <em>Host PC IP</em> e reinicie a TV.</li>
-            <li><b>No computador:</b> baixe o <a href="https://github.com/reisxd/TizenBrewInstaller/releases/latest" rel="noopener">TizenBrew Installer</a>, o instalador da comunidade para TVs Samsung, abra e conecte na sua TV.</li>
-            <li><b>Instale pelo GitHub:</b> digite isto. Nas TVs de 2023 em diante, ele pede para entrar na sua conta Samsung uma vez, para assinar o app para a sua TV.
-              <div class="code"><code>fernandodimas/custom-webos</code><button class="copy-btn" type="button" aria-label="Copiar">Copiar</button></div>
+            <li><b>Na TV:</b> instale o <em>Developer Mode</em> na LG Content Store, ligue o <em>Key Server</em> e anote o IP e a senha.</li>
+            <li><b>No computador:</b> baixe o código:
+              <div class="code"><code>git clone https://github.com/fernandodimas/custom-webos &amp;&amp; cd custom-webos</code><button class="copy-btn" type="button" aria-label="Copiar comando">Copiar</button></div>
             </li>
-            <li><b>Direto nele:</b> nas configurações da TV (Opções da Tela Inicial ou Funções Smart), ative a <em>Execução Automática do Último Aplicativo</em>: a TV já liga no Custom webOS Home. Ele pega a sua cidade pelo fuso da TV; para a cidade exata e os destaques, o Claude Code compila com as suas configurações.</li>
+            <li><b>Abra o Claude Code e diga:</b>
+              <div class="code prompt"><code>Instale o Custom webOS Home na minha TV LG em 192.168.1.50. Eu moro em São Paulo.</code><button class="copy-btn" type="button" aria-label="Copiar pedido">Copiar</button></div>
+              Ele configura suas preferências, compila o app webOS e auxilia no envio para a TV.
+            </li>
           </ol>
         </div>
       </div>
@@ -273,15 +241,13 @@
     <section class="section compat" id="compat">
       <div class="head" data-reveal>
         <p class="kicker">Compatibilidade</p>
-        <h2>Funciona com qualquer TV.</h2>
-        <p class="sub">Roda direto nas TVs com Google TV e Android TV, e nas TVs LG e Samsung. Qualquer outra TV ganha o Custom webOS Home com um aparelho Google TV ligado no HDMI.</p>
+        <h2>Feito para LG webOS.</h2>
+        <p class="sub">Funciona com fluidez em Smart TVs LG OLED, QNED, NanoCell e 4K UHD com webOS 3.0 ou superior.</p>
       </div>
       <div class="chips" data-reveal>
-        <span class="chip ok">Google TV</span><span class="chip ok">Android TV</span><span class="chip ok">LG webOS</span><span class="chip ok">Samsung Tizen</span><span class="chip ok">TCL</span><span class="chip ok">Sony</span>
-        <span class="chip ok">Hisense</span><span class="chip ok">Philips</span><span class="chip ok">Xiaomi</span><span class="chip ok">Chromecast with Google TV</span>
-        <span class="chip ok">Google TV Streamer</span><span class="chip ok">NVIDIA Shield</span><span class="chip ok">onn 4K</span>
+        <span class="chip ok">LG webOS 3.0+</span><span class="chip ok">LG webOS 4.0+</span><span class="chip ok">LG webOS 5.0+</span>
+        <span class="chip ok">LG webOS 6.0</span><span class="chip ok">LG webOS 22</span><span class="chip ok">LG webOS 23</span><span class="chip ok">LG webOS 24</span>
       </div>
-      <p class="note" data-reveal>Outra marca ou modelo? Peça ao Claude: ele lê a sua TV e adapta o Custom webOS Home a ela, da tela inicial que ele troca aos apps que ele arruma.</p>
     </section>
 
     <!-- FAQ -->
@@ -291,16 +257,13 @@
         <h2>Boas perguntas.</h2>
       </div>
       <div class="qs" data-reveal>
-        <details><summary>É seguro?</summary><p>Ele usa os mesmos comandos das ferramentas de desenvolvedor do próprio Android, de dentro da TV. Nada de root, nada desinstalado: os apps só são desligados e voltam com um botão. Imagem, som, entradas, controle remoto, serviços do Google e Play Store ficam numa lista que ele nunca toca.</p></details>
-        <details><summary>Como eu volto ao original?</summary><p>Abra Custom webOS Home → Início → Original. A tela inicial de fábrica, o protetor de tela e todos os apps voltam exatamente como estavam. Se a tela nova travar três vezes em cinco minutos, ele volta sozinho.</p></details>
-        <details><summary>Muda a qualidade da imagem?</summary><p>Não. Os ajustes de imagem não são tocados e os vídeos passam pelo mesmo caminho no hardware. Medimos a mesma resolução e a mesma fonte de vídeo nos dois modos.</p></details>
-        <details><summary>O que é desligado?</summary><p>A tela inicial e o protetor de tela de fábrica (substituídos), a tela de recuperação do Google TV, Play Games e YouTube Music e, nas TVs TCL, o TCL Channel, as mensagens, a demonstração de loja, o menu de hotel, os manuais e os apps de espelhamento e de registros. O Google Assistente só se você pedir no config.</p></details>
-        <details><summary>Funciona em TV LG?</summary><p>Funciona. Na LG ele é instalado pelo próprio Developer Mode da LG, sem root e sem mudar nada na TV, e abre com um toque numa tecla numérica. A mesma tela inicial, com destaques, clima e cotações. Aperte EXTEND no app Developer Mode uma vez por mês para mantê-lo.</p></details>
-        <details><summary>Funciona em TV Samsung?</summary><p>Funciona, nas TVs Samsung de 2017 em diante. Ele é instalado pelo próprio Developer Mode da Samsung com o TizenBrew Installer, o instalador da comunidade, sem root e sem mudar nada na TV. A mesma tela inicial, clima e cotações, com a sua cidade pelo fuso da TV. Para os destaques, o Claude Code compila com a sua chave grátis do TMDB.</p></details>
-        <details><summary>Dá para deixar do meu jeito?</summary><p>Essa é a ideia. Abra a pasta no Claude Code e é só pedir: "coloque o Crunchyroll na prateleira", "mostre as cotações em reais", "configure para a minha Sony". Ele muda o código, compila o app e coloca na sua TV.</p></details>
-        <details><summary>Fica em português?</summary><p>Fica. O app segue o idioma da TV (português, inglês, espanhol, russo ou alemão), ou o que você escolher nos ajustes dele. Quer outro idioma? Peça ao Claude.</p></details>
-        <details><summary>Ele coleta algum dado?</summary><p>Não. Sem contas, sem análises, sem rastreamento. Ele só fala com o TMDB (destaques), o Open-Meteo (clima, da sua cidade) e a Binance (cotações).</p></details>
-        <details><summary>É grátis?</summary><p>Sim. Licença MIT, e a chave do TMDB também é grátis.</p></details>
+        <details><summary>É seguro?</summary><p>Sim. É executado como um app no modo de desenvolvedor oficial da LG. Nada de root ou modificações permanentes no sistema operacional da TV.</p></details>
+        <details><summary>Como abrir rapidamente?</summary><p>Com o Custom webOS Home aberto, aperte e segure qualquer número (como o 1) no controle remoto da LG. Isso fixa o app como atalho de Acesso Rápido da TV.</p></details>
+        <details><summary>Muda a qualidade de imagem ou som?</summary><p>Não. Os modos de imagem, HDR, entradas HDMI e áudio permanecem 100% nativos da TV.</p></details>
+        <details><summary>O que acontece quando o Developer Mode expira?</summary><p>O Developer Mode dura cerca de 40 dias. Basta abrir o app Developer Mode na TV uma vez por mês e clicar em EXTEND.</p></details>
+        <details><summary>O app está em português?</summary><p>Sim, traduzido para português brasileiro e outros 4 idiomas, detectado automaticamente pelo sistema da TV.</p></details>
+        <details><summary>Coleta algum dado pessoal?</summary><p>Nenhum. Sem cadastro, sem telemetria e sem anúncios. Comunica apenas com a API pública do TMDB (destaques) e Open-Meteo (previsão do tempo local).</p></details>
+        <details><summary>É gratuito?</summary><p>Sim, software livre de código aberto sob licença MIT.</p></details>
       </div>
     </section>
 

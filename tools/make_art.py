@@ -5,7 +5,7 @@ import os
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FONT = os.path.join(ROOT, "app/assets/fonts/InterVariable.ttf")
+FONT = os.path.join(ROOT, "web/fonts/InterVariable.ttf")
 STOPS = [(0.0, (255, 194, 122)), (0.5, (255, 122, 158)), (1.0, (154, 140, 255))]   # sunrise -> pink -> dusk
 
 
@@ -100,10 +100,10 @@ def banner(w=640, h=360):
 
 
 if __name__ == "__main__":
-    res = os.path.join(ROOT, "app/res/drawable-nodpi")
-    os.makedirs(res, exist_ok=True)
-    mark(192).save(os.path.join(res, "icon.png"))
-    banner().save(os.path.join(res, "banner.png"))
+    webos_dir = os.path.join(ROOT, "webos")
+    os.makedirs(webos_dir, exist_ok=True)
+    mark(80).save(os.path.join(webos_dir, "icon.png"))
+    mark(130).save(os.path.join(webos_dir, "largeIcon.png"))
     site = os.path.join(ROOT, "docs/assets")
     os.makedirs(site, exist_ok=True)
     mark(512).save(os.path.join(site, "icon-512.png"))

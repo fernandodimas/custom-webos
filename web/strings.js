@@ -1,5 +1,5 @@
 /*
- * On-screen text in Portuguese, English, Spanish, German and Russian (the same copy as the Android app).
+ * On-screen text in Portuguese, English, Spanish, German and Russian.
  * tr(pt, en, es): the text in the current language. The language follows the TV unless set in Home Settings.
  */
 var I18N = (function () {

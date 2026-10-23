@@ -3,7 +3,7 @@
  *  - the picks: what's trending this week and recent releases, only from the streaming apps on this TV (TMDB, with
  *    the person's own free key from config.properties), three per hour;
  *  - weather, sunrise and sunset (Open-Meteo, every 30 min).
- * Settings changed on the TV (Prefs) win over config.properties, as on Android. Built without a city (--generic), the
+ * Settings changed on the TV (Prefs) win over config.properties. Built without a city (--generic), the
  * TV's time zone gives the city, and its country the currency and the region (zones.js).
  */
 var CONFIG = window.CONFIG || {};

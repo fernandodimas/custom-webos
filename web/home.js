@@ -1,5 +1,5 @@
 /*
- * The home screen for web-app TVs (LG webOS, Samsung Tizen), with the Android app's design and behavior (HomeView):
+ * The home screen for LG webOS:
  *  - top: the "For You" title and the tabs (Explore, Movies, Shows); icon-only glass buttons at the right (Live TV,
  *    HDMI Inputs, Settings) and the crypto quotes at the end of the tab row;
  *  - three picks for this hour in the selected tab; the background is the first one's photo, blurred and almost white;
@@ -849,7 +849,6 @@
 
   window.addEventListener('resize', fit);
   document.addEventListener('webOSRelaunch', reopened);   // LG: opened again while running
-  window.addEventListener('appcontrol', reopened);        // Samsung: the same
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) { hideSaver(); return; }
     idleAt = Date.now();
